@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{% static 'collection/css/style.css' %}" />
+    <title>南师大数科院学生会2019年招新信息采集</title>
+    <style>
+        label {
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: right;
+            width: 130px;
+            vertical-align: top;
+        }
+        
+        fieldset {
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            padding: 0 .625em;
+        }
+    </style>
+</head>
+
+<body background="https://cdn.img.wenhairu.com/images/2019/08/31/8EAaA.jpg">
+
+    <div>
+        <div class="photo" style="text-align:center"><img src="https://cdn.img.wenhairu.com/images/2019/08/31/8E6vn.png" width="80" height="80"></div>
+        <div class="intro" style="text-align:center">
+            <h3>南师大数科院学生会2019年招新信息采集</h3>
+        </div>
+    </div>
+
+    <div id="form" style="text-align:center">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="name" style="text-align:left">姓名：</label>
+            <input type="text" id="name" name="name" maxlength=5 class="a" style="width:150px" required><br><br>
+            <label for="sex" style="text-align:left">性别：</label>
+            <select id="sex" name="sex" class="select" style="width:150px">
+				<option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+            <br><br>
+            <label for="stu_number" style="text-align:left">学号：</label>
+            <input type="text" id="stu_number" name="stu_number" maxlength=8 class="a" style="width:150px" required><br><br>
+            <label for="major" style="text-align:left">专业</label>
+            <select id="major" name="major" class="select" style="width:150px">
+				<option value="数学类">数学类</option>
+				<option value="统计学">统计学</option>
+                <option value="金融数学">金融数学</option>
+            </select>
+            <br><br>
+            <label for="phone_number" style="text-align:left">手机号码：</label>
+            <input type="text" id="phone_number" name="phone_number" maxlength=11 class="a" style="width:150px" required><br><br>
+            <label for="QQ_number" style="text-align:left">QQ号：</label>
+            <input type="text" id="QQ_number" name="QQ_number" maxlength=13 class="a" style="width:150px" required><br><br>
+            <label for="first_department" style="text-align:left">第一意向部门：</label>
+            <select id="first_department" name="first_department" class="select" style="width:150px">
+				<option value="办公室">办公室</option>
+				<option value="行政部">行政部</option>
+				<option value="文体部">文体部</option>
+                <option value="科创部">科创部</option>
+                <option value="科创部">宣传部</option>
+			</select>
+            <br><br>
+            <label for="second_department" style="text-align:left">第二意向部门：</label>
+            <select id="second_department" name="second_department" class="select" style="width:150px">
+				<option value="办公室">办公室</option>
+				<option value="行政部">行政部</option>
+				<option value="文体部">文体部</option>
+                <option value="科创部">科创部</option>
+                <option value="科创部">宣传部</option>
+			</select>
+            <br><br>
+            <textarea id="notes" style="width:280px; height:100px" name="notes" class="a" style="text-align:center">自我介绍（可关于个人能力，特长爱好等方向展开）</textarea><br><br>
+            <textarea id="experiences" style="width:280px; height:100px" name="experiences" class="a" style="text-align:center">工作经历（参加过什么活动，在活动中担任过什么职务）</textarea><br><br>
+            <textarea id="wishes" style="width:280px; height:100px" name="wishes" class="a" style="text-align:center">愿景期待（想在学生会做些什么，希望收获什么）</textarea>
+
+            <br>
+            <label for="img">证件照：</label>
+            <input id="img" type="file" name="img" style="text-align:center">
+
+            <div style="text-align:center">
+                <input type="reset" class="button" value="重置">
+                <input type="submit" class="button" value="提交">
+            </div>
+
+        </form>
+    </div>
+
+    <footer id="site-footer">
+        <div class="container" style="text-align:center">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright" style="font-size:14px">&copy 2019 网页制作：贾梁. All Rights Reserved
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
